@@ -1,18 +1,8 @@
 # Assignment 4
-This assignment is mainly focused on implementing CPS functions, working with lazy lists, and solve logic programming problems.
-
-CPS Functions: Implement pipe$, a CPS-based function composition tool, and demonstrate its equivalence to standard pipe.
-
-Lazy Lists: Develop procedures for reducing values in lazy lists, creating lazy lists with incremental reductions, and generating lazy approximations to π.
-
-Logic Programming: Perform unification tasks, and implement pathfinding, edge reversal, and node degree calculations in directed graphs using Prolog.
-
-
-# Table of content
-* The assignment document is located here
-* The skeleton files are located here
-* The solution is located here
-* The theoretical solution is located here
+This assignment is mainly focused on implementing CPS functions, working with lazy lists, and solve logic programming problems.  
+* **CPS Functions:** Implement ```pipe$```, a CPS-based function composition tool, and demonstrate its equivalence to standard pipe.  
+* **Lazy Lists:** Develop procedures for reducing values in lazy lists, creating lazy lists with incremental reductions, and generating lazy approximations to π.
+* **Logic Programming:** Perform unification tasks, and implement pathfinding, edge reversal, and node degree calculations in directed graphs using Prolog.
 
 # Setting up the project
 0. Download the repo and unzip it.
@@ -22,5 +12,5 @@ Logic Programming: Perform unification tasks, and implement pathfinding, edge re
 
 
 # Credits
-Responsible Lecturer: Meni Adler
+Responsible Lecturer: Meni Adler  
 Responsible TA: Ofir Shahar
