@@ -1,0 +1,12 @@
+For a start, we need two new "value" types, class and object (name them whatever you want), you need to add them in L3-values' value element so we can return them as Result<value>.
+These two new types can be identical to classExp but the object is a bit different, it requires the environment to include his own variables in order to solve the rest of the questions.
+Flow wise, we need to compile class into a value that can later be used to create more "instances" of that value.
+Instance is a fancy word to say "type of class X" such as in Java, when we do Pair p; p is an instance of Pair.
+Since L3 is a functional programming, the instances always call for the constructor, otherwise that would be an error.
+(Pair p12 (1 2)) this calls the constructor and gives it the values 1 and 2 for variables a and b respectively (args[i] is the value of fields[i]).
+In other words, when we create an object we need to save the values of the variables somewhere. That's where env comes in hand.
+Env is a linked list of environments, where each environment includes definition to one variable and its type, value and next env. You need to update the current environment and add the variables you receive in an object (you receive the values from args).
+
+
+Now, in order to run a specific function, in applyObject (new function) you need to search the method[] for the function, return error if it can't find it, if it can find it check if it's good binding then run it (see example in different functions), most of the tests are related to this function and error catching.
+The name of the functions will be args[0] and the rest of arguments follow that, so you might need to rrmove the first argument after finding it.

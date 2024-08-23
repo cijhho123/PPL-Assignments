@@ -1,0 +1,65 @@
+#lang racket
+
+; Signature: append(l1 l2)
+; Type: [List[any]*List[any] -> List[any]]
+; Purpose: To append one string at the tail of another.
+; Pre-conditions: true
+; Tests: (append '(1 2) '(3 4)) ==> '(1 2 3 4)
+(define append
+  (lambda (l1 l2)
+    (if (eq? l1 '())
+        l2
+        (cons (car l1) (append (cdr l1) l2)))
+))
+
+; Signature: reverse(l1)
+; Type: [List[any] -> List[any]]
+; Purpose: To reverse a list
+; Pre-conditions: true
+; Tests: (append '(1 2 3)) ==> '(3 2 1)
+(define reverse
+  (lambda (l1)
+    (if (eq? l1 '())
+        l1
+        (if (not (pair? l1))
+        (cons l1 '())
+        (append (reverse(cdr l1)) (cons (car l1) '()))))
+))
+
+; Signature: dup(lst, num)
+; Type: [List[any]*Number -> List[any]]
+; Purpose: To append to a list 'num' times its last item (including the existing item)
+; Pre-conditions: true
+; Tests: (dup '(1 2 3) 3) ==> '(1 2 3 3 3)
+(define dup
+  (lambda (lst num)
+         (if (< num 1)
+             (append lst '())
+             (dup (append lst (cons (car(reverse lst)) '())) (- num 1)))
+))
+
+; Signature: larger(lst, counter, base)
+; Type: [List[any]*List[any]*List[any] -> List[any]]
+; Purpose: Create a list consists of |lst| copies of base
+; Pre-conditions: (! (eq? base '()))
+; Tests: (append '(1 2 3) '() '(1 2)) ==> '(1 2 1 2 1 2 1 2 1 2 1 2)
+(define larger
+  (lambda (lst counter base)
+    (if (eq? lst '())
+         counter
+        (larger (cdr lst) (append counter base) base))
+))
+
+; Signature: duplicate-items(lst, dup-count)
+; Type: [List[any]*List[any] -> List[any]]
+; Purpose:  duplicates each item of lst according to the number defined in the same position in dup-count.
+; Pre-conditions: (! (eq? dup-count '()))
+; Tests: (dup '(1 2 3) 3) ==> '(1 2 3 3 3)
+(define duplicate-items
+    (lambda (lst dup-count)
+      (if (eq? lst '())
+          '()
+          (if (eq? (car dup-count) 0)
+          (duplicate-items (cdr lst) (cdr dup-count))
+          (append (dup (cons (car lst) '()) (- (car dup-count) 1)) (duplicate-items(cdr lst) (cdr dup-count)))))
+))
