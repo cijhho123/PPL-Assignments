@@ -56,4 +56,5 @@ This assignment is mainly focused on implementing CPS functions, working with la
 
 # Credits
 All the credits goes to the PPL staff at the CS department of BGU.  
-Special thanks to my lecturer Meni A. and teaching assistant Ariel G.
+Special thanks to my lecturer Meni A. and teaching assistant Ariel G.  
+All the assignments were done as a collaboration with T.K. - sorry for all the late nights of work buddy :)
