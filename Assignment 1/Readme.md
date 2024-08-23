@@ -10,5 +10,5 @@ The assignment also introduces the concept of monads.
 
 
 # Credits
-Responsible Lecturer: Meni Adler
+Responsible Lecturer: Meni Adler  
 Responsible TA: Gur Elkin 
